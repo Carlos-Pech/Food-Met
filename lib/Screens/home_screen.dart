@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_met/widgets/Home/botton_navigation.dart';
-import 'package:food_met/widgets/home_categories.dart';
+import 'package:food_met/widgets/Home/home_categories.dart';
 import '../widgets/Home/home_app_bar.dart';
 import '../widgets/Home/home_carrousel_section.dart';
-import '../widgets/home_categorie_section.dart';
-import '../widgets/home_search_widget.dart';
+import '../widgets/Home/home_categorie_section.dart';
+import '../widgets/Home/home_search_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

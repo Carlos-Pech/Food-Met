@@ -33,7 +33,9 @@ class ProductWidgets {
           },
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(
-                const Color.fromARGB(255, 187, 3, 3)),
+              const Color.fromARGB(255, 187, 3, 3),
+              // Colors.green
+            ),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             minimumSize: MaterialStateProperty.all<Size>(
               const Size(20, 20),

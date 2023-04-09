@@ -1,1 +1,1 @@
-const baseUrl = "https://apifood-met.up.railway.app/";
+const baseUrl = "https://api-foodmet.up.railway.app/";
