@@ -39,7 +39,7 @@ class HomeAppBar extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const MyDropDown(),
+                      const Dropdown(),
                       IconButton(
                         onPressed: () {
                           // Mostrar el AlertDialog para añadir un nuevo Mesa aquí
@@ -91,14 +91,15 @@ class HomeAppBar extends StatelessWidget {
 
 //.......................................
 
-class MyDropDown extends StatefulWidget {
-  const MyDropDown({Key? key}) : super(key: key);
+class Dropdown extends StatefulWidget {
+  const Dropdown({Key? key}) : super(key: key);
 
   @override
-  _MyDropDownState createState() => _MyDropDownState();
+  // ignore: library_private_types_in_public_api
+  _DropdownState createState() => _DropdownState();
 }
 
-class _MyDropDownState extends State<MyDropDown> {
+class _DropdownState extends State<Dropdown> {
   String _selectedMesa = '';
   List<Mesa> _mesas = [];
 
@@ -175,14 +176,16 @@ class _MyDropDownState extends State<MyDropDown> {
     try {
       final response = await http.put(Uri.parse(
           'https://api-foodmet.up.railway.app/mesa/mesas/$id/liberar'));
-
+      //a
       if (response.statusCode == 200) {
+        // ignore: avoid_print
         print('Mesa liberada: $id');
         await _getMesas();
       } else {
         throw Exception('Error al liberar mesa');
       }
     } catch (error) {
+      // ignore: avoid_print
       print('Error al liberar la mesa: $error');
     }
   }
@@ -194,11 +197,13 @@ class _MyDropDownState extends State<MyDropDown> {
           body: {'table': mesaNombre});
 
       if (response.statusCode == 200) {
+        // ignore: avoid_print
         print('Mesa seleccionada: $mesaNombre');
       } else {
         throw Exception('error al seleccionar mesa');
       }
     } catch (error) {
+      // ignore: avoid_print
       print('Error al seleccionar la mesa: $error');
     }
   }
@@ -226,13 +231,13 @@ class Mesa {
 
 
 // class MyDropDown extends StatefulWidget {
-//   const MyDropDown({Key? key}) : super(key: key);
+//   const Dropdown({Key? key}) : super(key: key);
 
 //   @override
 //   _MyDropDownState createState() => _MyDropDownState();
 // }
 
-// class _MyDropDownState extends State<MyDropDown> {
+// class _MyDropDownState extends State<Dropdown> {
 //   String _selectedClient = 'Mesa 1';
 //   final List<String> _clientOptions = ['Mesa 1', 'Mesa 2', 'Mesa 3'];
 
